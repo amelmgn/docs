@@ -83,7 +83,7 @@ The sort feature enables users to manually sort items in the Data Studio and via
 **Sorting Relational Fields**
 To configure manual sorting within a [relational field](/guides/data-model/relationships) (e.g., M2M, O2M, or M2A), also set the sort field within the relationship section of the field's configuration drawer.
 
-Once configured, click "Sort Button"} in the configured sort column, and then drag items by their :icon{name="material-symbols:drag-handle" title="Drag Button"} handle. You can also sort by the sort field with querying data via the [Items API](/api/items).
+Once configured, click "Sort Button" in the configured sort column, and then drag items by their "Drag Button" handle. You can also sort by the sort field with querying data via the [Items API](/api/items).
 
 ### Duplication
 
