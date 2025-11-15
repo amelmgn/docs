@@ -246,7 +246,7 @@ See all available relationship types in Directus.
 
 Each field can be configured to be half or full width in the editor. Two half-width fields can be placed next to each other. Additionally, a field can be configured to use up the full-width of the editor, expanding beyond the usual full-width container.
 
-Field width is not in the field configuration, but can be set by clicking on :icon{name="material-symbols:more-vert" title="Field Width Button"} in the collection data model page.
+Field width is not in the field configuration, but can be set by clicking on "Field Width Button" in the collection data model page.
 
 **Field Width Configurations**
 - `half` fields will go from `[start]` until `[half]` in the grid system, but have a maximum width of `380px` defined by the `--form-column-max-width` css variable.
