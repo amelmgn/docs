@@ -39,14 +39,11 @@ Additionally, Directus can create some common fields, including a status field, 
 - **Generated UUID**: Universally Unique Identifier. Creates a completely unique ID. IDs generated with this system (not just in your database, but anywhere this system is used) are so statistically unlikely to be repeated that for all practical purposes they are unique.
 - **Manually Entered String**: you manually type out a unique string as the ID for each item. Directus will ensure they are unique by forbidding new item creation with a duplicate ID.
 
-
 ## Configuring Collections
 
 Once a collection is created, there are a number of configuration options available.
 
 ### Collection Setup
-
-![Configuration settings for the posts collection](/img/5b85f21c-b96f-4453-887b-c043f167b523.webp)
 
 - **Note**: set a helpful note that explains the collection's purpose. Seen in Data Model settings page.
 - **Icon**: icon used throughout the Data Studio when referencing this collection.
@@ -62,19 +59,11 @@ Content versioning is used by :product-link{product="editor"} and allows teams t
 
 This feature can be enabled for specific collections, and will be available for all items. Once enabled, item versions can be created, and later have some or all fields promoted to the main version, typically used for publishing.
 
-::callout{icon="material-symbols:menu-book-outline" color="primary" to="/guides/content/content-versioning"}
-Read the content versioning user guide.
-::
-
 ### Live Preview
 
 Live preview is used by :product-link{product="editor"} and allows for your application to be shown in a pane next to your content, which can be used for previewing content before publishing.
 
 You can use item field values to construct the URL used by the live preview, including unique identifiers and content version, allowing for previewing content versions before promoting them to the main version.
-
-::callout{icon="material-symbols:school-outline" color="secondary" to="/tutorials/getting-started"}
-Read tutorials on implementing live preview.
-::
 
 ### Accountability
 
@@ -84,10 +73,8 @@ Read tutorials on implementing live preview.
 
 By default, your Directus project tracks all activity and revisions for collections. However, you can override this and choose to only track activity, or nothing.
 
-::callout{icon="material-symbols:info-outline"}
 **Accountability vs Telemetry**
 Accountability is a log of who does what in your project. It is for your team's own use. This is different from telemetry, which is configured in environment variables.
-::
 
 ### Sorting
 
@@ -95,7 +82,6 @@ The sort feature enables users to manually sort items in the Data Studio and via
 
 **Sorting Relational Fields**
 To configure manual sorting within a [relational field](/guides/data-model/relationships) (e.g., M2M, O2M, or M2A), also set the sort field within the relationship section of the field's configuration drawer.
-::
 
 Once configured, click :icon{name="material-symbols:sort" title="Sort Button"} in the configured sort column, and then drag items by their :icon{name="material-symbols:drag-handle" title="Drag Button"} handle. You can also sort by the sort field with querying data via the [Items API](/api/items).
 
@@ -103,17 +89,10 @@ Once configured, click :icon{name="material-symbols:sort" title="Sort Button"} i
 
 The **Save as Copy** option in :product-link{product="editor"} offers a way to effectively duplicate the current item. Duplication settings define which field values will be copied.
 
-::callout{icon="material-symbols:info-outline"}
-
-**Duplicating Items with Relationships**
-
+**Duplicating Items with Relationships**<br/>
 When you duplicate an item, any related items are not copied. You must create new relationships between the duplicated item and related items.
 
-::
-
 ### Archive Settings
-
-:video-embed{video-id="1fb83779-28e9-4523-bcbc-57065d7177a1"}
 
 Archived items still exist in your collections, but are filtered within the Data Studio. If not selected as an optional field when creating a collection, you will need to create a new field.
 
@@ -124,10 +103,8 @@ To configure an archive field, set the following four input fields as desired.
 - **Archive Value**: assigned value to archive field when an item is archived.
 - **Unarchive Value**: assigned value to archive field when an item is unarchived.
 
-::callout{icon="material-symbols:info-outline"}
 **Archived Items via API**
 Archived items are hidden in the app by default, but they are still returned normally via the API unless explicitly filtered out. This gives you the flexibility to manage archived items however you want when working with the API.
-::
 
 ### Advanced Field Creation Mode
 
@@ -167,8 +144,6 @@ While fields that come system collection fields cannot be altered, you can exten
 
 ## Existing Database Tables
 
-![System database tables](/img/426fb648-1e88-46e4-92f1-af76f3254d25.webp)
-
 When Directus is connected to an existing database, it will introspect existing tables and relationships and collections will be made available to admins via the [Items API](/api/items).
 
 To access the collection via the Data Studio, you must configure the collection with additional Directus-specific metadata, such as interfaces, displays, and icons.
@@ -183,7 +158,7 @@ Directus does not currently support composite keys, or the creation of virtual t
 
 # Fields
 
-## Description
+# Description
 
 Directus fields let you define how your data is stored and displayed. Learn about creating fields, data types, interfaces, validations, relationships, and more. Discover how to configure fields to perfectly suit your data modeling needs in Directus.
 
@@ -210,6 +185,8 @@ Geospatial fields are used to store data in [GeoJSON](https://geojson.org/) form
 ## Creating Fields
 
 When creating a new field, you must first select an [interface](/guides/data-model/interfaces) and provide some basic configuration. Basic configuration will depend on the interface selected, but all fields have some common characteristics.
+
+![Field creation form showing datetime field](/img/426fb648-1e88-46e4-92f1-af76f3254d25.webp)
 
 The **interface** describes how users will create and edit data, as well as how it is displayed in :product-link{product="editor"}. There are many kinds of built-in interface, such as a text input, date selector, map, and a set of relationship interfaces. More interfaces can be built as [extensions](/guides/extensions/overview).
 
@@ -238,9 +215,7 @@ This section also allows for a note - which is displayed in the editor and provi
 
 This section describes how the user will create, edit, and view data in the editor, and are effectively different form inputs. Each interface will have its own configuration options.
 
-::callout{icon="material-symbols:menu-book-outline" color="primary" to="/guides/data-model/interfaces"}
 See all available interfaces in Directus.
-::
 
 ### Display
 
@@ -267,6 +242,8 @@ This section will only appear when the field is relational, and describes the re
 
 Relational triggers configure what will happen to the relational field data when related values are deselected or deleted. This includes setting values to `null`, their default, or cascading/preventing the deletion.
 
+See all available relationship types in Directus.
+
 ### Field Width
 
 Each field can be configured to be half or full width in the editor. Two half-width fields can be placed next to each other. Additionally, a field can be configured to use up the full-width of the editor, expanding beyond the usual full-width container.
@@ -274,7 +251,6 @@ Each field can be configured to be half or full width in the editor. Two half-wi
 Field width is not in the field configuration, but can be set by clicking on :icon{name="material-symbols:more-vert" title="Field Width Button"} in the collection data model page.
 
 **Field Width Configurations**
-
 - `half` fields will go from `[start]` until `[half]` in the grid system, but have a maximum width of `380px` defined by the `--form-column-max-width` css variable.
 - `full` fields will be the sum of 2 `half` fields, with a maximum width of `760px`.
 - `fill` fields will fill the available space, without any maximum.
@@ -345,7 +321,6 @@ A search input that will populate dropdown choices by making a request to a give
 
 **Throttle vs Debounce**
 Throttle and debounce are very similar. Debounce will wait until a period of 'silence' has happened before making the request, while throttle will keep making requests at most 1 call every period. Period is set in the 'rate' configuration for this interface.
-::
 
 ### Block Editor
 
@@ -383,15 +358,16 @@ Textarea input for longer plain text.
 
 The What You See Is What You Get (WYSIWYG) editor provides a text area with rich formatting options in the toolbar.
 
-| Configuration       | Options                                                                                                                                                                               |
-| ------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Configuration       | Options  |
 | Types               | `Text`                                                                                                                                                                                |
 | Toolbar             | Allows for customization of visible formatting options                                                                                                                                |
 | Folder              | Default folder to store uploaded files. Does not affect existing files.                                                                                                               |
 | Soft Limit          | Used to limit the number of characters within the Data Studio.                                                                                                                        |
 | Static Access Token | Token appended to asset URLs when displaying in the editor.                                                                                                                           |
 | Custom Formats      | JSON array of formatting that is passed to the `style_formats` config option of the WYSIWYG editor instance. [TinyMCE Documentation](https://www.tiny.cloud/docs/demo/format-custom/) |
-| Options Override    | JSON object to override the default config option of the WYSIWYG editor instance. [TinyMCE Documentation](https://www.tiny.cloud/docs/configure/)                                     |
+| Options Override    | JSON object to override the default config option of the WYSIWYG editor instance. [TinyMCE 
+
+Documentation](https://www.tiny.cloud/docs/configure/)                                     |
 
 ### Markdown
 
@@ -474,13 +450,9 @@ Each field in a repeater has further configuration options.
 
 Show and set geospatial data on an interactive map. Mapping data is stored as [GeoJSON](https://geojson.org/).
 
-::callout{icon="material-symbols:info-outline"}
 **Maps Provider**
 By default, Directus will use [OpenStreetMap](https://www.openstreetmap.org) to display your mapping data.
-
-[By entering a Mapbox API key](/configuration/general#mapbox), you can enhance the platform's mapping experience.
-::
-
+d
 | Configuration | Options |
 | Types         | <ul><li>**`Point`**: A single location on a map.</li> <li>**`LineString`**: A series of points on a map connected in a line.</li> <li>**`Polygon`**: An area of a map drawn by selecting vertices.</li> <li>**`Multipoint`**: A series of disconnected points on a map.</li> <li>**`MultiLineString`**: A series of `LineString` objects.</li> <li>**`MultiPolygon`**: A series of `Polygon` objects.</li> <li>**`Geometry (All)`**: An series of `Point`, `LineString` and `Polygon` objects.</li> <li>**`JSON`**: A `Geometry (All)` object stored as JSON.</li> <li>**`String`**: A `Geometry (All)` object stored a string of characters.</li> <li>**`Text`**: A `Geometry (All)` object stored as Text.</li> <li>**`CSV`**: A `Geometry (All)` object stored as comma-separated values.</li> |
 | Default View  | The default location and zoom settings on the map to show by default |
@@ -503,7 +475,6 @@ A color picker interface that allows users to input color codes and convert betw
 Input that allows the user to select a value from a dropdown list of options.
 
 | Configuration | Options                                                                                                       |
-| ------------- | ------------------------------------------------------------------------------------------------------------- |
 | Types         | `String`, `Integer`, `Big Integer`, `Float`, `Decimal`                                                        |
 | Choices       | Options for the dropdown. Each option contains text that is displayed to the user and a value that is stored. |
 | Allow Other   | Allow user to enter custom values other than preset values.                                                   |
@@ -551,46 +522,39 @@ Nested tree of checkboxes that can be expanded or collapsed.
 | Choices         | Options for the checkboxes. Each option contains text that is displayed to the user and a value that is stored, along with any child options. |
 | Choice Children | Child checkboxes nested below the current choice.                                                                                             |
 | Value Combining | Controls what value is stored when nested selections are made. `All`, `Branch`, `Leaf`, `Indeterminate`, `Exclusive`.                         |
-  **Understanding Value Combining Options**
-  In a Checkboxes (Tree) interface, checkboxes can exist within a parent checkbox. Value combining determines the final value when selecting items in a tree.
-  - `All` returns all checked values.
-      | Selection                                                                                                                | Final Value                |
-      | ------------------------------------------------------------------------------------------------------------------------ | -------------------------- |
-      | :icon{name="material-symbols:check-box-outline"} `parent`<br>&emsp; :icon{name="material-symbols:check-box"} `child1`<br>&emsp; :icon{name="material-symbols:check-box-outline"} `child2` | `[child1]`                 |
-      | :icon{name="material-symbols:check-box"} `parent`<br>&emsp; :icon{name="material-symbols:check-box"} `child1`<br>&emsp; :icon{name="material-symbols:check-box"} `child2`         | `[child1, child2, parent]` |
-    :::
-  - `Branch` returns the top-most values that are selected.
-    :::collapsible{name="examples" class="mt-2"}
-    | Selection                                                                                                                | Final Value |
-    | ------------------------------------------------------------------------------------------------------------------------ | ----------- |
-    | :icon{name="material-symbols:check-box-outline"} `parent`<br>&emsp; :icon{name="material-symbols:check-box"} `child1`<br>&emsp; :icon{name="material-symbols:check-box-outline"} `child2` | `[child1]`  |
-    | :icon{name="material-symbols:check-box"} `parent`<br>&emsp; :icon{name="material-symbols:check-box"} `child1`<br>&emsp; :icon{name="material-symbols:check-box"} `child2`         | `[parent]`  |
-    :::
-  - `Leaf` returns the deepest values that are selected
-    :::collapsible{name="examples" class="mt-2"}
-    | Selection                                                                                                                | Final Value        |
-    | ------------------------------------------------------------------------------------------------------------------------ | ------------------ |
-    | :icon{name="material-symbols:check-box-outline"} `parent`<br>&emsp; :icon{name="material-symbols:check-box"} `child1`<br>&emsp; :icon{name="material-symbols:check-box-outline"} `child2` | `[child1]`         |
-    | :icon{name="material-symbols:check-box"} `parent`<br>&emsp; :icon{name="material-symbols:check-box"} `child1`<br>&emsp; :icon{name="material-symbols:check-box"} `child2`         | `[child1, child2]` |
-    :::
-  - `Indeterminate` returns checked items, and always returns a parent when one or more children are selected.
-    :::collapsible{name="examples" class="mt-2"}
-    | Selection                                                                                                                | Final Value                |
-    | ------------------------------------------------------------------------------------------------------------------------ | -------------------------- |
-    | :icon{name="material-symbols:check-box-outline"} `parent`<br>&emsp; :icon{name="material-symbols:check-box"} `child1`<br>&emsp; :icon{name="material-symbols:check-box-outline"} `child2` | `[child1, parent]`         |
-    | :icon{name="material-symbols:check-box"} `parent`<br>&emsp; :icon{name="material-symbols:check-box"} `child1`<br>&emsp; :icon{name="material-symbols:check-box"} `child2`         | `[child1, child2, parent]` |
-    :::
-  - `Exclusive` returns either the parent or child elements, but not both.
-    :::collapsible{name="examples" class="mt-2"}
-    | Selection                                                                                                                | Final Value        |
-    | ------------------------------------------------------------------------------------------------------------------------ | ------------------ |
-    | :icon{name="material-symbols:check-box"} `parent`<br>&emsp; :icon{name="material-symbols:check-box-outline"} `child1`<br>&emsp; :icon{name="material-symbols:check-box-outline"} `child2` | `[parent]`         |
-    | :icon{name="material-symbols:check-box-outline"} `parent`<br>&emsp; :icon{name="material-symbols:check-box"} `child1`<br>&emsp; :icon{name="material-symbols:check-box-outline"} `child2` | `[child1]`         |
-    | :icon{name="material-symbols:check-box-outline"} `parent`<br>&emsp; :icon{name="material-symbols:check-box"} `child1`<br>&emsp; :icon{name="material-symbols:check-box"} `child2`     | `[child1, child2]` |
-    :::
-::
+
+**Understanding Value Combining Options**
+In a Checkboxes (Tree) interface, checkboxes can exist within a parent checkbox. Value combining determines the final value when selecting items in a tree.
+- `All` returns all checked values.
+| Selection                                                                                                                | Final Value                |
+| ------------------------------------------------------------------------------------------------------------------------ | -------------------------- |
+| :icon{name="material-symbols:check-box-outline"} `parent`<br>&emsp; :icon{name="material-symbols:check-box"} `child1`<br>&emsp; :icon{name="material-symbols:check-box-outline"} `child2` | `[child1]`                 |
+| :icon{name="material-symbols:check-box"} `parent`<br>&emsp; :icon{name="material-symbols:check-box"} `child1`<br>&emsp; :icon{name="material-symbols:check-box"} `child2`         | `[child1, child2, parent]` |
+- `Branch` returns the top-most values that are selected.
+| Selection                                                                                                                | Final Value |
+| ------------------------------------------------------------------------------------------------------------------------ | ----------- |
+| :icon{name="material-symbols:check-box-outline"} `parent`<br>&emsp; :icon{name="material-symbols:check-box"} `child1`<br>&emsp; :icon{name="material-symbols:check-box-outline"} `child2` | `[child1]`  |
+| :icon{name="material-symbols:check-box"} `parent`<br>&emsp; :icon{name="material-symbols:check-box"} `child1`<br>&emsp; :icon{name="material-symbols:check-box"} `child2`         | `[parent]`  |
+- `Leaf` returns the deepest values that are selected
+| Selection                                                                                                                | Final Value        |
+| ------------------------------------------------------------------------------------------------------------------------ | ------------------ |
+| :icon{name="material-symbols:check-box-outline"} `parent`<br>&emsp; :icon{name="material-symbols:check-box"} `child1`<br>&emsp; :icon{name="material-symbols:check-box-outline"} `child2` | `[child1]`         |
+| :icon{name="material-symbols:check-box"} `parent`<br>&emsp; :icon{name="material-symbols:check-box"} `child1`<br>&emsp; :icon{name="material-symbols:check-box"} `child2`         | `[child1, child2]` |
+- `Indeterminate` returns checked items, and always returns a parent when one or more children are selected.
+| Selection                                                                                                                | Final Value                |
+| ------------------------------------------------------------------------------------------------------------------------ | -------------------------- |
+| :icon{name="material-symbols:check-box-outline"} `parent`<br>&emsp; :icon{name="material-symbols:check-box"} `child1`<br>&emsp; :icon{name="material-symbols:check-box-outline"} `child2` | `[child1, parent]`         |
+| :icon{name="material-symbols:check-box"} `parent`<br>&emsp; :icon{name="material-symbols:check-box"} `child1`<br>&emsp; :icon{name="material-symbols:check-box"} `child2`         | `[child1, child2, parent]` |
+- `Exclusive` returns either the parent or child elements, but not both.
+| Selection                                                                                                                | Final Value        |
+| ------------------------------------------------------------------------------------------------------------------------ | ------------------ |
+| :icon{name="material-symbols:check-box"} `parent`<br>&emsp; :icon{name="material-symbols:check-box-outline"} `child1`<br>&emsp; :icon{name="material-symbols:check-box-outline"} `child2` | `[parent]`         |
+| :icon{name="material-symbols:check-box-outline"} `parent`<br>&emsp; :icon{name="material-symbols:check-box"} `child1`<br>&emsp; :icon{name="material-symbols:check-box-outline"} `child2` | `[child1]`         |
+| :icon{name="material-symbols:check-box-outline"} `parent`<br>&emsp; :icon{name="material-symbols:check-box"} `child1`<br>&emsp; :icon{name="material-symbols:check-box"} `child2`     | `[child1, child2]` |
 
 ### Radio Buttons
+
+![A radio button form input with different options to select](/img/d9cb554c-d24b-44b5-a0a1-f28187542f34.webp)
 
 Radio button input that allows users to select a single value from multiple choices.
 
@@ -815,7 +779,6 @@ In a M2O relationship, multiple items from the one collection are linked to one 
 In :product-link{product="editor"}, having a M2O field does not automatically provide navigation to the related collection's items. To achieve this, the related collection requires a One to Many field to be set up.
 
 **M2O Examples**
-
 - Given `cities` and `countries` collections, many cities would be assigned to one country.
 - Given `orders` and `customers`, many orders would be assigned to one customer.
 - Given `books` and `publishers`, many books would be assigned to one publisher.
@@ -833,7 +796,6 @@ In a M2M relationship, an additional collection is created known as the junction
 You can also have a self-referencing M2M relationship that connects items in the same collection.
 
 **Self-Referencing M2M Examples**
-
 - Given an `articles` collection, you could configure related articles.
 - Given a `users` collection, you could configure a friends list.
 - Given `papers`, you could configure citations.
@@ -846,12 +808,12 @@ In a M2A relationship, one collection can be related to any item in any collecti
 
 When you configure a M2A in Directus, a M2A `Alias` field is created as well as a junction collection. The junction collection in a M2A relationship also stores the collection name for related collections.
 
-to="/tutorials/getting-started/create-reusable-blocks-with-many-to-any-relationships"}
 Read our tutorial on using a Builder (M2A) to create reusable page components.
 
 ## Translations
 
 When you create a Translations interface in Directus, a translations O2M `Alias` field is created, as well as a `languages` collection and a junction collection between your main collection and `languages`. All translated text is stored in the junction collection.
+
 
 # Collection Explorer
 
@@ -878,7 +840,6 @@ In order for filters to be included in `AND` or `OR` groups, filters must be ind
 ### Dynamic Variables
 
 The following dynamic variables are built into Directus to add extra functionality to filters: 
-
 - **`$CURRENT_USER`** — The primary key of the currently authenticated user.
 - **`$CURRENT_ROLE`** — The primary key of the role for the currently authenticated user.
 - **`$CURRENT_ROLES`** - An array of roles containing the `$CURRENT_ROLE` and any roles included within it.
@@ -913,3 +874,276 @@ Filters & Search: Filter your data with our powerful query builder across just o
 Layouts: Layouts are customized displays for viewing and interacting with the Items in a Collection. This makes working with specific types of data models, such as map locations or calendar events, a more human-friendly experience.
 
 Save layout presets: Save your data layouts, filters, and sorts in presets and make them available to specific users or roles.
+
+
+# Item Editor
+
+## Description
+
+Learn to create, duplicate, archive and perform other actions with items using Directus.
+
+The item editor is a tailored form for managing individual items and their field values.
+
+## Fields & Data Model
+
+You can add fields to items by [configuring the collection's data model](/guides/data-model/fields). Here, you can also configure how the fields are displayed in the item editor.
+
+## Creating Items
+
+To create an item, click :icon{name="material-symbols:add-circle-outline-rounded"} in the page header to open the item page.
+
+Fill in the fields as desired. Note that some of these will be [marked as required](/guides/data-model/fields) and need to be filled in, or be dynamic fields. Relations will be filled in here, too.
+
+**Singletons**  
+If the collection is configured as a [singleton](/guides/data-model/collections) in the data model
+settings, the App will automatically open the item page when selecting the collection.
+
+## Duplicating Items
+
+When editing an item, you can click on :icon{name="material-symbols:more-vert"} to select some advanced options, amongst them "Save as Copy". Selecting this will save a copy.
+
+## Archiving Items
+
+To archive an item, follow these steps, navigate to the content module and select the desired collection. Select the desired item to open the item editor. Click :icon{name="material-symbols:archive"} located in the header and a popup will appear to confirm the action.
+
+Archived items will not show up in app, but will still be returned in API responses unless explicitly filtered out.
+
+**Requires Configuration**  
+Archiving requires an [archive field](/guides/data-model/collections) to be configured within the collection's data model
+settings.
+
+## Revisions
+
+As you update field values on items, Directus saves these revisions, and they can be compared side-by-side to the current state.
+
+To revert an item, navigate to the content module and select the desired collection and select the desired item. Click on "Revisions" in the editor sidebar and then on the revision you wish to preview. Go to "Revisions Made" in the side menu and view the revision differences. Click :icon{name="material-symbols:settings-backup-restore"} to revert the item's values and return to the item page.
+
+**Revision Preview**  
+You will also see a "Revision Preview" button in the side menu navigation, which will let you preview all the item's
+values for that revision.
+
+You can also revert items [programmatically via the API](/api/revisions).
+
+## Comments
+
+You can add comments to items in the sidebar by clicking on "Comments", which will show the form for submitting one. You can use the @ button to tag specific users in your comment.
+
+## Shares
+
+You can create shareable links to view an item in the sidebar by clicking on Shares -> New Share.
+
+Here, you can specify the name, password, roles allowed to access the item, as well as the start and end dates for the link's validity, followed by the maximum times a link can be used.
+
+To share the link, click on the new share's :icon{name="material-symbols:more-horiz"} and select either "Copy Link" or "Send Link". You can also edit or destroy the share in this menu.
+
+## Next Steps
+
+Learn how to use [content versioning](/guides/content/content-versioning) and the [live preview](/guides/content/live-preview) functionality.
+
+
+# Layouts
+
+## Description
+
+Learn to use layouts for viewing and interacting with items in a collection using Directus.
+
+Layouts are customized mechanisms for viewing and interacting with the items in a collection.
+
+## Adjust a Collection's Layout
+
+To adjust an item's layout, navigate to the content and select the collection you wish to work with. In the page sidebar, click on "Layout Options". Then you can choose the desired layout type you want to use and customize it accordingly.
+
+Layouts are tailored to work with specific data-models. For example, in order to work properly, the map layout requires
+the collection have a map field configured and the calendar layout requires the collection have a datetime field configured.
+
+Each layout presents data differently, so certain customizations may not be functional with certain layouts. For example,
+the map layout displays each item as a pin on a map, so this layout has no controls for sorting.
+
+Depending on the layout, the same control may be under layout options in the sidebar, the subheader, or on the page area
+(and items themselves). For example, the table layout lets you set the field values displayed in the subheader while
+the card layout lets you set field values displayed in the layout options menu.
+
+### Customization Controls
+
+Customization controls can be found in the following three locations:
+- **Layout Options** — Located in the sidebar.
+- **Subheader** — Located just below the page header and above the page area.
+- **Page Area** — The center of the webpage, which displays all items.
+
+These controls typically fall into three general categories.
+
+| Category       | Description                                                                                       |
+|------------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| Styling and Formatting       | These are additional customizations to the way a layout displays such as the size of each Item, how images are cropped, etc.                                                                                       |
+| Field Values Displayed       | Most layouts allow you to choose which field value(s) are used to represent each item on the collection page. For example, with blog posts, it may be ideal to have the hero image, blog title, date, author, etc. |
+| Manual and Automatic Sorting | Certain layouts may allow sorting items by value in ascending and descending order, drag-and-drop repositioning of items, etc.                                                                                     |
+
+## Table Layout
+
+This layout displays items in a tabular form, making it compatible with all kinds of items. This is the default
+layout used in the content module.
+
+### Layout Options
+
+| Control         | Description                               |
+| --------------- | ----------------------------------------- |
+| **Spacing** | Adjust the vertical space a row takes up. |
+
+### Subheader
+
+| Control                          | Description                                                                                                             |
+| -------------------------------- | ----------------------------------------------------------------------------------------------------------------------- |
+| **Adjust Column Width**      | Click and drag the column divider to resize as desired.                                                                 |
+| **Add Field**                | Select :icon{name="material-symbols:add-circle-outline-rounded"} in the page subheader and select the desired Field(s). |
+| **Remove Field**             | Select :icon{name="material-symbols:arrow-drop-down-circle"} in the column title and click **"Hide Field"**.        |
+| **Sort Items by Column**     | Select :icon{name="material-symbols:arrow-drop-down-circle"} in the column title and sort ascending or descending.      |
+| **Set Text Alignment**       | Select :icon{name="material-symbols:arrow-drop-down-circle"} in the column title and set left, right, or center.        |
+| **Toggle & Reorder Columns** | Click the column header, then drag-and-drop as desired.                                                                 |
+| **Select All**               | Click :icon{name="material-symbols:check-box-outline"} in the selection column header.                                  |
+
+### Page Area
+
+| Control                     | Description                                                                                                                                              |
+| --------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **Select Item(s)**      | Click :icon{name="material-symbols:check-box-outline"} in the selection column for the desired Item(s).                                                  |
+| **Manually Sort Items** | Toggle :icon{name="material-symbols:check-box-outline"} in the configured Sort column to drag and drop :icon{name="material-symbols:drag-handle"} Items. |
+
+**Manual Sorting Requires Configuration**  
+Only available if you [configure a sort field](/guides/data-model/collections) in the collection's data model
+settings.
+
+## Card Layout
+
+This tiled layout is ideal for collections that prioritize an image. This is the default
+for both the user directory and
+file library. It includes the following controls.
+
+### Layout Options
+
+| Control | Description |
+|---|---|
+| **Image Source** | Set the field used as the display image. |
+| **Title** | Sets a display template to use as a title. |
+| **Subtitle** | Sets a display template to use as a subtitle. |
+| **Image Fit** | Set how an image fits inside the card. |
+| **Fallback Icon** | Set a default icon to display when an item has no image. |
+
+### Subheader
+
+| Control | Description |
+|---|---|
+| **Card Size** | Toggle the card size as it appears in the page area. |
+| **Order Field** | Click to select the field you wish to order by from the dropdown menu. |
+| **Order Direction** | Toggle ascending and descending order. |
+| **Select All** | Click  ":icon{name="material-symbols:check-circle"} Select All" in the selection column header. |
+
+### Page Area
+
+| Control | Description |
+|---|---|
+| **Select Item(s)** | Click ":icon{name="material-symbols:radio-button-unchecked"} in the selection column for the desired item(s). |
+
+
+## Calendar Layout
+
+This layout is ideal for collections with time-oriented data (e.g. events and appointments).
+
+### Layout Options
+
+| Control | Description |
+|---|---|
+| **Display Template** | Set a mix of field values and text to represent items on the calendar. |
+| **Start Date Field** | Choose field to determine each item's beginning time on the calendar. |
+| **End Date Field** | Choose field to determine each item's ending time on the calendar. |
+| **First Day of The Week** | Defines the beginning of the week on the calendar.  |
+
+### Subheader
+
+| Control | Description |
+|---|---|
+| **Toggle Month and Year** | Move across time using the chevrons in the subheader. |
+| **Today** | Click to jump to the current date on the calendar. |
+| **Month Week Day List** | Adjust the time interval used to display items in the page area. |
+
+### Page Area
+
+| Control | Description |
+|---|---|
+| **Select Item** | Click an item on the calendar to open its item page. |
+
+**Configuration Requirements**  
+To use this layout, the collection will need at least one datetime [Field](/guides/data-model/fields) to set a start time,
+but ideally two datetime Fields (to set a start time and end time).
+
+## Map Layout
+
+This layout is ideal for collections that emphasize geospatial data. It provides a world map, with items displayed as
+points, lines, and other geometry.
+
+### Layout Options
+
+| Control | Description |
+|---|---|
+| **Basemap** | Choose the map provider used for the collection. |
+| **Geospatial Field** | Select the geospatial field type to display on screen: <ul><li>Map JSON Point: Supports latitude-longitude based, single-point locations.</li><li>Map Geometry: Supports geometric areas such as lines and polygons.</li></ul> |
+| **Display Template** | Choose the fields displayed when hovering over an item on the map. |
+| **Cluster Nearby Data** | Toggle whether or not nearby items get clustered into a single pin.  |
+
+### Subheader
+
+There is no Subheader on the Map Layout.
+
+### Page Area
+
+| Control | Description |
+|---|---|
+| **Zoom** | Click :icon{name="material-symbols:add"} and :icon{name="material-symbols:remove"} in the upper left hand corner of the page area to zoom in and out. |
+| **Find my Location** | Click :icon{name="material-symbols:my-location"} to zoom into your current location on the map. |
+| **Reframe** | Click the square in the upper left-hand corner to resize and reframe the map area. |
+| **Select Item** | Click a single item to enter its item page. |
+| **Select Items** | Click and drag to select multiple items at once, opening the item page. |
+
+**Configuration Requirements**  
+To use this Layout, the collection must have a map field configured.
+
+## Kanban Layout
+
+This layout is ideal for collections that serve as project management tools or to-do lists, where each item represents a
+task, because it groups items onto columns according to their status (e.g. "Not Started", "In Progress", "Under
+Review", "Complete", or any other status defined).
+
+### Layout Options
+
+| Control | Description |
+|---|---|
+| **Group By** | Select the field used to define item status. See below for details. |
+| **Card Title** | Choose the field use to serve as the title for each kanban board. |
+| **Card Text** | Choose a field to display additional text on each item.  |
+
+### Layout Options > Advanced
+
+| Control | Description |
+|---|---|
+| **Card Tags** | Choose a tag field to be displayed on the item. |
+| **Card Date** | Choose a datetime field to be displayed on each item. |
+| **Card Image** | Choose an image field to be displayed on each item. |
+| **Card Image Fit** | Toggle whether the image fit is cropped. |
+| **Card User** | Choose the user created field to display their avatar in the bottom right corner. |
+| **Show Ungrouped** | Toggle display of a column containing Items with no assigned status.  |
+
+### Subheader
+
+There is no Subheader for the Kanban Layout.
+
+### Page Area
+
+| Control | Description |
+|---|---|
+| **Create Task and Assign Status** | Click :icon{name="material-symbols:add"} in a status column and the item page will open. |
+| **Sort Panels** | Drag and drop items to reposition or change task status. |
+| **Add Status Panel**  | Click :icon{name="material-symbols:add-box"} and add a group name (i.e. new status column). |
+| **Edit or Delete Status Column** | Click :icon{name="material-symbols:more-horiz"} and then click :icon{name="material-symbols:edit"} to edit or :icon{name="material-symbols:delete"} to delete. |
+
+**Configuration Requirements**  
+To make this layout work, you will need to configure an appropriate status [field](/guides/data-model/fields) on the
+collection, then identify this field under "Group By" in the Layout Options menu.
