@@ -83,7 +83,7 @@ The sort feature enables users to manually sort items in the Data Studio and via
 **Sorting Relational Fields**
 To configure manual sorting within a [relational field](/guides/data-model/relationships) (e.g., M2M, O2M, or M2A), also set the sort field within the relationship section of the field's configuration drawer.
 
-Once configured, click :icon{name="material-symbols:sort" title="Sort Button"} in the configured sort column, and then drag items by their :icon{name="material-symbols:drag-handle" title="Drag Button"} handle. You can also sort by the sort field with querying data via the [Items API](/api/items).
+Once configured, click "Sort Button"} in the configured sort column, and then drag items by their :icon{name="material-symbols:drag-handle" title="Drag Button"} handle. You can also sort by the sort field with querying data via the [Items API](/api/items).
 
 ### Duplication
 
@@ -185,8 +185,6 @@ Geospatial fields are used to store data in [GeoJSON](https://geojson.org/) form
 ## Creating Fields
 
 When creating a new field, you must first select an [interface](/guides/data-model/interfaces) and provide some basic configuration. Basic configuration will depend on the interface selected, but all fields have some common characteristics.
-
-![Field creation form showing datetime field](/img/426fb648-1e88-46e4-92f1-af76f3254d25.webp)
 
 The **interface** describes how users will create and edit data, as well as how it is displayed in :product-link{product="editor"}. There are many kinds of built-in interface, such as a text input, date selector, map, and a set of relationship interfaces. More interfaces can be built as [extensions](/guides/extensions/overview).
 
