@@ -450,10 +450,6 @@ Show and set geospatial data on an interactive map. Mapping data is stored as [G
 
 **Maps Provider**
 By default, Directus will use [OpenStreetMap](https://www.openstreetmap.org) to display your mapping data.
-d
-| Configuration | Options |
-| Types         | <ul><li>**`Point`**: A single location on a map.</li> <li>**`LineString`**: A series of points on a map connected in a line.</li> <li>**`Polygon`**: An area of a map drawn by selecting vertices.</li> <li>**`Multipoint`**: A series of disconnected points on a map.</li> <li>**`MultiLineString`**: A series of `LineString` objects.</li> <li>**`MultiPolygon`**: A series of `Polygon` objects.</li> <li>**`Geometry (All)`**: An series of `Point`, `LineString` and `Polygon` objects.</li> <li>**`JSON`**: A `Geometry (All)` object stored as JSON.</li> <li>**`String`**: A `Geometry (All)` object stored a string of characters.</li> <li>**`Text`**: A `Geometry (All)` object stored as Text.</li> <li>**`CSV`**: A `Geometry (All)` object stored as comma-separated values.</li> |
-| Default View  | The default location and zoom settings on the map to show by default |
 
 **Database Support**
 Your database must support geospatial data or have a geospatial plugin installed, such as PostGIS or SpatiaLite, to fully utilize mapping functionality with Directus.
