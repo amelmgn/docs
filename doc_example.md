@@ -83,7 +83,7 @@ The sort feature enables users to manually sort items in the Data Studio and via
 **Sorting Relational Fields**
 To configure manual sorting within a [relational field](/guides/data-model/relationships) (e.g., M2M, O2M, or M2A), also set the sort field within the relationship section of the field's configuration drawer.
 
-Once configured, click :icon{name="material-symbols:sort" title="Sort Button"} in the configured sort column, and then drag items by their :icon{name="material-symbols:drag-handle" title="Drag Button"} handle. You can also sort by the sort field with querying data via the [Items API](/api/items).
+Once configured, click "Sort Button" in the configured sort column, and then drag items by their "Drag Button" handle. You can also sort by the sort field with querying data via the [Items API](/api/items).
 
 ### Duplication
 
@@ -186,8 +186,6 @@ Geospatial fields are used to store data in [GeoJSON](https://geojson.org/) form
 
 When creating a new field, you must first select an [interface](/guides/data-model/interfaces) and provide some basic configuration. Basic configuration will depend on the interface selected, but all fields have some common characteristics.
 
-![Field creation form showing datetime field](/img/426fb648-1e88-46e4-92f1-af76f3254d25.webp)
-
 The **interface** describes how users will create and edit data, as well as how it is displayed in :product-link{product="editor"}. There are many kinds of built-in interface, such as a text input, date selector, map, and a set of relationship interfaces. More interfaces can be built as [extensions](/guides/extensions/overview).
 
 The **key** is the unique name for a field within a collection. This value is used in both the Data Studio and via API. Within the Data Studio, the key is parsed through our title formatter to improve readability.
@@ -248,7 +246,7 @@ See all available relationship types in Directus.
 
 Each field can be configured to be half or full width in the editor. Two half-width fields can be placed next to each other. Additionally, a field can be configured to use up the full-width of the editor, expanding beyond the usual full-width container.
 
-Field width is not in the field configuration, but can be set by clicking on :icon{name="material-symbols:more-vert" title="Field Width Button"} in the collection data model page.
+Field width is not in the field configuration, but can be set by clicking on "Field Width Button" in the collection data model page.
 
 **Field Width Configurations**
 - `half` fields will go from `[start]` until `[half]` in the grid system, but have a maximum width of `380px` defined by the `--form-column-max-width` css variable.
@@ -525,32 +523,6 @@ Nested tree of checkboxes that can be expanded or collapsed.
 
 **Understanding Value Combining Options**
 In a Checkboxes (Tree) interface, checkboxes can exist within a parent checkbox. Value combining determines the final value when selecting items in a tree.
-- `All` returns all checked values.
-| Selection                                                                                                                | Final Value                |
-| ------------------------------------------------------------------------------------------------------------------------ | -------------------------- |
-| :icon{name="material-symbols:check-box-outline"} `parent`<br>&emsp; :icon{name="material-symbols:check-box"} `child1`<br>&emsp; :icon{name="material-symbols:check-box-outline"} `child2` | `[child1]`                 |
-| :icon{name="material-symbols:check-box"} `parent`<br>&emsp; :icon{name="material-symbols:check-box"} `child1`<br>&emsp; :icon{name="material-symbols:check-box"} `child2`         | `[child1, child2, parent]` |
-- `Branch` returns the top-most values that are selected.
-| Selection                                                                                                                | Final Value |
-| ------------------------------------------------------------------------------------------------------------------------ | ----------- |
-| :icon{name="material-symbols:check-box-outline"} `parent`<br>&emsp; :icon{name="material-symbols:check-box"} `child1`<br>&emsp; :icon{name="material-symbols:check-box-outline"} `child2` | `[child1]`  |
-| :icon{name="material-symbols:check-box"} `parent`<br>&emsp; :icon{name="material-symbols:check-box"} `child1`<br>&emsp; :icon{name="material-symbols:check-box"} `child2`         | `[parent]`  |
-- `Leaf` returns the deepest values that are selected
-| Selection                                                                                                                | Final Value        |
-| ------------------------------------------------------------------------------------------------------------------------ | ------------------ |
-| :icon{name="material-symbols:check-box-outline"} `parent`<br>&emsp; :icon{name="material-symbols:check-box"} `child1`<br>&emsp; :icon{name="material-symbols:check-box-outline"} `child2` | `[child1]`         |
-| :icon{name="material-symbols:check-box"} `parent`<br>&emsp; :icon{name="material-symbols:check-box"} `child1`<br>&emsp; :icon{name="material-symbols:check-box"} `child2`         | `[child1, child2]` |
-- `Indeterminate` returns checked items, and always returns a parent when one or more children are selected.
-| Selection                                                                                                                | Final Value                |
-| ------------------------------------------------------------------------------------------------------------------------ | -------------------------- |
-| :icon{name="material-symbols:check-box-outline"} `parent`<br>&emsp; :icon{name="material-symbols:check-box"} `child1`<br>&emsp; :icon{name="material-symbols:check-box-outline"} `child2` | `[child1, parent]`         |
-| :icon{name="material-symbols:check-box"} `parent`<br>&emsp; :icon{name="material-symbols:check-box"} `child1`<br>&emsp; :icon{name="material-symbols:check-box"} `child2`         | `[child1, child2, parent]` |
-- `Exclusive` returns either the parent or child elements, but not both.
-| Selection                                                                                                                | Final Value        |
-| ------------------------------------------------------------------------------------------------------------------------ | ------------------ |
-| :icon{name="material-symbols:check-box"} `parent`<br>&emsp; :icon{name="material-symbols:check-box-outline"} `child1`<br>&emsp; :icon{name="material-symbols:check-box-outline"} `child2` | `[parent]`         |
-| :icon{name="material-symbols:check-box-outline"} `parent`<br>&emsp; :icon{name="material-symbols:check-box"} `child1`<br>&emsp; :icon{name="material-symbols:check-box-outline"} `child2` | `[child1]`         |
-| :icon{name="material-symbols:check-box-outline"} `parent`<br>&emsp; :icon{name="material-symbols:check-box"} `child1`<br>&emsp; :icon{name="material-symbols:check-box"} `child2`     | `[child1, child2]` |
 
 ### Radio Buttons
 
@@ -829,7 +801,7 @@ To open the collection explorer, click on the content module on the left hand si
 
 You can create custom filters to display items that fulfill certain criteria.
 
-Click on :icon{name="material-symbols:filter-list"} at the top of the page to create a filter. You can then select a field to filter by and click on the criterion to tweak what should pass for that item to be filtered.
+Click on "filter-list" at the top of the page to create a filter. You can then select a field to filter by and click on the criterion to tweak what should pass for that item to be filtered.
 
 ### And / Or Groups
 
@@ -853,13 +825,13 @@ Layouts are customized mechanisms for viewing and interacting with the items in 
 
 ## Batch Editing
 
-By selecting more than one item in the explorer will allow you to click on :icon{name="material-symbols:filter-list"} and edit several items' fields at once to have the same value.
+By selecting more than one item in the explorer will allow you to click on "filter-list" and edit several items' fields at once to have the same value.
 
 ## Bookmarks
 
 Bookmarks are custom views for your collections that include specified configurations, layouts, visible fields, sorting, filtering and more.
 
-To create a bookmark, navigate to the Settings -> Bookmarks module. Here, you can create a new one by clicking on :icon{name="material-symbols:add-circle-outline-rounded"}.
+To create a bookmark, navigate to the Settings -> Bookmarks module. Here, you can create a new one by clicking on "add-circle-outline-rounded".
 
 You'll see the "Editing Preset" form, where you can set the name and collection, amongst layout and other values for this bookmark. Note that leaving the name field empty will make it so this bookmark is what is viewed for this collection by default.
 
@@ -890,7 +862,7 @@ You can add fields to items by [configuring the collection's data model](/guides
 
 ## Creating Items
 
-To create an item, click :icon{name="material-symbols:add-circle-outline-rounded"} in the page header to open the item page.
+To create an item, click "add-circle-outline-rounded" in the page header to open the item page.
 
 Fill in the fields as desired. Note that some of these will be [marked as required](/guides/data-model/fields) and need to be filled in, or be dynamic fields. Relations will be filled in here, too.
 
@@ -900,11 +872,11 @@ settings, the App will automatically open the item page when selecting the colle
 
 ## Duplicating Items
 
-When editing an item, you can click on :icon{name="material-symbols:more-vert"} to select some advanced options, amongst them "Save as Copy". Selecting this will save a copy.
+When editing an item, you can click on "more-vert" to select some advanced options, amongst them "Save as Copy". Selecting this will save a copy.
 
 ## Archiving Items
 
-To archive an item, follow these steps, navigate to the content module and select the desired collection. Select the desired item to open the item editor. Click :icon{name="material-symbols:archive"} located in the header and a popup will appear to confirm the action.
+To archive an item, follow these steps, navigate to the content module and select the desired collection. Select the desired item to open the item editor. Click "archive" located in the header and a popup will appear to confirm the action.
 
 Archived items will not show up in app, but will still be returned in API responses unless explicitly filtered out.
 
@@ -916,7 +888,7 @@ settings.
 
 As you update field values on items, Directus saves these revisions, and they can be compared side-by-side to the current state.
 
-To revert an item, navigate to the content module and select the desired collection and select the desired item. Click on "Revisions" in the editor sidebar and then on the revision you wish to preview. Go to "Revisions Made" in the side menu and view the revision differences. Click :icon{name="material-symbols:settings-backup-restore"} to revert the item's values and return to the item page.
+To revert an item, navigate to the content module and select the desired collection and select the desired item. Click on "Revisions" in the editor sidebar and then on the revision you wish to preview. Go to "Revisions Made" in the side menu and view the revision differences. Click "settings-backup-restore" to revert the item's values and return to the item page.
 
 **Revision Preview**  
 You will also see a "Revision Preview" button in the side menu navigation, which will let you preview all the item's
@@ -934,7 +906,7 @@ You can create shareable links to view an item in the sidebar by clicking on Sha
 
 Here, you can specify the name, password, roles allowed to access the item, as well as the start and end dates for the link's validity, followed by the maximum times a link can be used.
 
-To share the link, click on the new share's :icon{name="material-symbols:more-horiz"} and select either "Copy Link" or "Send Link". You can also edit or destroy the share in this menu.
+To share the link, click on the new share's "more-horiz" and select either "Copy Link" or "Send Link". You can also edit or destroy the share in this menu.
 
 ## Next Steps
 
@@ -994,19 +966,19 @@ layout used in the content module.
 | Control                          | Description                                                                                                             |
 | -------------------------------- | ----------------------------------------------------------------------------------------------------------------------- |
 | **Adjust Column Width**      | Click and drag the column divider to resize as desired.                                                                 |
-| **Add Field**                | Select :icon{name="material-symbols:add-circle-outline-rounded"} in the page subheader and select the desired Field(s). |
-| **Remove Field**             | Select :icon{name="material-symbols:arrow-drop-down-circle"} in the column title and click **"Hide Field"**.        |
-| **Sort Items by Column**     | Select :icon{name="material-symbols:arrow-drop-down-circle"} in the column title and sort ascending or descending.      |
-| **Set Text Alignment**       | Select :icon{name="material-symbols:arrow-drop-down-circle"} in the column title and set left, right, or center.        |
+| **Add Field**                | Select "add-circle-outline-rounded" in the page subheader and select the desired Field(s). |
+| **Remove Field**             | Select "arrow-drop-down-circle" in the column title and click **"Hide Field"**.        |
+| **Sort Items by Column**     | Select "arrow-drop-down-circle" in the column title and sort ascending or descending.      |
+| **Set Text Alignment**       | Select "arrow-drop-down-circle" in the column title and set left, right, or center.        |
 | **Toggle & Reorder Columns** | Click the column header, then drag-and-drop as desired.                                                                 |
-| **Select All**               | Click :icon{name="material-symbols:check-box-outline"} in the selection column header.                                  |
+| **Select All**               | Click "check-box-outline" in the selection column header.                                  |
 
 ### Page Area
 
 | Control                     | Description                                                                                                                                              |
 | --------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| **Select Item(s)**      | Click :icon{name="material-symbols:check-box-outline"} in the selection column for the desired Item(s).                                                  |
-| **Manually Sort Items** | Toggle :icon{name="material-symbols:check-box-outline"} in the configured Sort column to drag and drop :icon{name="material-symbols:drag-handle"} Items. |
+| **Select Item(s)**      | Click "check-box-outline" in the selection column for the desired Item(s).                                                  |
+| **Manually Sort Items** | Toggle "check-box-outline" in the configured Sort column to drag and drop "drag-handle" Items. |
 
 **Manual Sorting Requires Configuration**  
 Only available if you [configure a sort field](/guides/data-model/collections) in the collection's data model
@@ -1035,13 +1007,13 @@ file library. It includes the following controls.
 | **Card Size** | Toggle the card size as it appears in the page area. |
 | **Order Field** | Click to select the field you wish to order by from the dropdown menu. |
 | **Order Direction** | Toggle ascending and descending order. |
-| **Select All** | Click  ":icon{name="material-symbols:check-circle"} Select All" in the selection column header. |
+| **Select All** | Click  "check-circle" Select All" in the selection column header. |
 
 ### Page Area
 
 | Control | Description |
 |---|---|
-| **Select Item(s)** | Click ":icon{name="material-symbols:radio-button-unchecked"} in the selection column for the desired item(s). |
+| **Select Item(s)** | Click "radio-button-unchecked" in the selection column for the desired item(s). |
 
 
 ## Calendar Layout
@@ -1097,8 +1069,8 @@ There is no Subheader on the Map Layout.
 
 | Control | Description |
 |---|---|
-| **Zoom** | Click :icon{name="material-symbols:add"} and :icon{name="material-symbols:remove"} in the upper left hand corner of the page area to zoom in and out. |
-| **Find my Location** | Click :icon{name="material-symbols:my-location"} to zoom into your current location on the map. |
+| **Zoom** | Click "add" and "remove" in the upper left hand corner of the page area to zoom in and out. |
+| **Find my Location** | Click "my-location" to zoom into your current location on the map. |
 | **Reframe** | Click the square in the upper left-hand corner to resize and reframe the map area. |
 | **Select Item** | Click a single item to enter its item page. |
 | **Select Items** | Click and drag to select multiple items at once, opening the item page. |
@@ -1139,10 +1111,10 @@ There is no Subheader for the Kanban Layout.
 
 | Control | Description |
 |---|---|
-| **Create Task and Assign Status** | Click :icon{name="material-symbols:add"} in a status column and the item page will open. |
+| **Create Task and Assign Status** | Click "add" in a status column and the item page will open. |
 | **Sort Panels** | Drag and drop items to reposition or change task status. |
-| **Add Status Panel**  | Click :icon{name="material-symbols:add-box"} and add a group name (i.e. new status column). |
-| **Edit or Delete Status Column** | Click :icon{name="material-symbols:more-horiz"} and then click :icon{name="material-symbols:edit"} to edit or :icon{name="material-symbols:delete"} to delete. |
+| **Add Status Panel**  | Click "add-box" and add a group name (i.e. new status column). |
+| **Edit or Delete Status Column** | Click "more" and then click "edit" to edit or "delete" to delete. |
 
 **Configuration Requirements**  
 To make this layout work, you will need to configure an appropriate status [field](/guides/data-model/fields) on the
